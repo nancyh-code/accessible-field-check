@@ -1,0 +1,39 @@
+# Xcode user data
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
+# Build products
+DerivedData/
+build/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.mobileprovision
+secrets.json
+credentials.json
+AuthKey_*.p8
+
+# OS and editor
+.DS_Store
+*.swp
+*~
+
+# Fastlane local output (not used in this change)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output/

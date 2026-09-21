@@ -11,7 +11,7 @@ import SwiftUI
 struct AccessibleFieldCheckApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppRootView()
         }
     }
 }

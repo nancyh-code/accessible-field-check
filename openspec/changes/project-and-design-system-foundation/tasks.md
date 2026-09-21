@@ -1,9 +1,9 @@
 ## 1. App and navigation foundation
 
-- [ ] 1.1 Add a root `.gitignore` that excludes `xcuserdata/`, `DerivedData/`, `.DS_Store`, and secret-like files, and verify `git status` no longer lists personal Xcode user data.
-- [ ] 1.2 Set `IPHONEOS_DEPLOYMENT_TARGET` to 18.0 without removing already-generated macOS/visionOS destinations, and verify the pbxproj shows 18.0 while those destinations remain.
-- [ ] 1.3 Replace `ContentView` with `AppRootView` hosting `NavigationStack` and `AppDestination`, point `AccessibleFieldCheckApp` at it, and verify the app launches to Audits with no tab bar.
-- [ ] 1.4 Add `AuditsView` (empty landing) and `NewAuditPlaceholderView`, wire the primary action to push `.newAudit`, and verify navigating back still shows the empty Audits state with nothing persisted.
+- [x] 1.1 Add a root `.gitignore` that excludes `xcuserdata/`, `DerivedData/`, `.DS_Store`, and secret-like files, and verify `git status` no longer lists personal Xcode user data.
+- [x] 1.2 Set `IPHONEOS_DEPLOYMENT_TARGET` to 18.0 without removing already-generated macOS/visionOS destinations, and verify the pbxproj shows 18.0 while those destinations remain.
+- [x] 1.3 Replace `ContentView` with `AppRootView` hosting `NavigationStack` and `AppDestination`, point `AccessibleFieldCheckApp` at it, and verify the app launches to Audits with no tab bar.
+- [x] 1.4 Add `AuditsView` (empty landing) and `NewAuditPlaceholderView`, wire the primary action to push `.newAudit`, and verify navigating back still shows the empty Audits state with nothing persisted.
 
 ## 2. Minimal design system
 
