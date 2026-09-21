@@ -9,12 +9,25 @@ import SwiftUI
 
 struct NewAuditPlaceholderView: View {
     var body: some View {
-        Text("Marcador de posición")
-            .font(.body)
-            .multilineTextAlignment(.center)
-            .padding()
-            .navigationTitle("Nueva auditoría")
-            .navigationBarTitleDisplayMode(.inline)
+        ScrollView {
+            VStack(spacing: AFCTokens.Spacing.medium) {
+                Text("Marcador de posición")
+                    .font(.body)
+                    .foregroundStyle(AFCTokens.Color.secondaryText)
+                    .multilineTextAlignment(.center)
+
+                VStack(alignment: .leading, spacing: AFCTokens.Spacing.small) {
+                    AFCStatusBadge(status: .pass)
+                    AFCStatusBadge(status: .needsAttention)
+                    AFCStatusBadge(status: .notApplicable)
+                }
+            }
+            .padding(AFCTokens.Spacing.large)
+            .frame(maxWidth: .infinity)
+        }
+        .background(AFCTokens.Color.background)
+        .navigationTitle("Nueva auditoría")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

@@ -7,10 +7,10 @@
 
 ## 2. Minimal design system
 
-- [ ] 2.1 Add `AFCTokens` with spacing (xSmall…xLarge), radius (small…large), and semantic colors from `design.md`, and verify all required tokens exist as value-type constants.
-- [ ] 2.2 Add `AFCPrimaryButton` using token spacing/colors, a semantic text style, and `minHeight` 44 rather than a fixed height, and verify it scales with Dynamic Type in Previews.
-- [ ] 2.3 Add `AFCStatusBadge` for pass, needsAttention, and notApplicable with text plus color (optional SF Symbol), and verify each status remains understandable without color.
-- [ ] 2.4 Add `AFCEmptyState` and wire `AuditsView` to the empty-state and primary-button components, and verify the landing screen uses tokens instead of one-off padding and colors.
+- [x] 2.1 Add `AFCTokens` with spacing (xSmall…xLarge), radius (small…large), and semantic colors from `design.md`, and verify all required tokens exist as value-type constants.
+- [x] 2.2 Add `AFCPrimaryButton` using token spacing/colors, a semantic text style, and `minHeight` 44 rather than a fixed height, and verify it scales with Dynamic Type in Previews.
+- [x] 2.3 Add `AFCStatusBadge` for pass, needsAttention, and notApplicable with text plus color (optional SF Symbol), and verify each status remains understandable without color.
+- [x] 2.4 Add `AFCEmptyState` and wire `AuditsView` to the empty-state and primary-button components, and verify the landing screen uses tokens instead of one-off padding and colors.
 
 ## 3. Localization, accessibility, and tests
 

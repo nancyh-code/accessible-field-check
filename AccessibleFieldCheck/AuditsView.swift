@@ -12,21 +12,13 @@ struct AuditsView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 16) {
-                Text("No hay auditorías todavía")
-                    .font(.title2)
-                    .multilineTextAlignment(.center)
-
-                Button("Nueva auditoría") {
+            AFCEmptyState(title: "No hay auditorías todavía") {
+                AFCPrimaryButton(title: "Nueva auditoría") {
                     path.append(.newAudit)
                 }
-                .font(.headline)
-                .buttonStyle(.borderedProminent)
             }
-            .frame(maxWidth: 480)
-            .padding()
-            .frame(maxWidth: .infinity)
         }
+        .background(AFCTokens.Color.background)
         .navigationTitle("Auditorías")
     }
 }
