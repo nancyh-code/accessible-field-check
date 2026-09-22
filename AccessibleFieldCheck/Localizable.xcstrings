@@ -1,0 +1,150 @@
+{
+  "sourceLanguage" : "es",
+  "strings" : {
+    "audit.empty.action" : {
+      "comment" : "Primary action on the empty Audits screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New audit"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva auditoría"
+          }
+        }
+      }
+    },
+    "audit.empty.title" : {
+      "comment" : "Empty-state title when no audits exist.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No audits yet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay auditorías todavía"
+          }
+        }
+      }
+    },
+    "audit.new.placeholder" : {
+      "comment" : "Copy on the temporary New Audit placeholder screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcador de posición"
+          }
+        }
+      }
+    },
+    "audit.new.title" : {
+      "comment" : "Navigation title for the New Audit placeholder.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New audit"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva auditoría"
+          }
+        }
+      }
+    },
+    "designSystem.status.needsAttention" : {
+      "comment" : "Status badge label for needs attention.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Needs attention"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Requiere atención"
+          }
+        }
+      }
+    },
+    "designSystem.status.notApplicable" : {
+      "comment" : "Status badge label for not applicable.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not applicable"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No aplica"
+          }
+        }
+      }
+    },
+    "designSystem.status.pass" : {
+      "comment" : "Status badge label for pass.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pass"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pasa"
+          }
+        }
+      }
+    },
+    "navigation.audits.title" : {
+      "comment" : "Navigation title for the Audits destination.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Audits"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auditorías"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

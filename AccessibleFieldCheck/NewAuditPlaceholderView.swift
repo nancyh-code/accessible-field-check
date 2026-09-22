@@ -11,7 +11,7 @@ struct NewAuditPlaceholderView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: AFCTokens.Spacing.medium) {
-                Text("Marcador de posición")
+                Text(String(localized: "audit.new.placeholder"))
                     .font(.body)
                     .foregroundStyle(AFCTokens.Color.secondaryText)
                     .multilineTextAlignment(.center)
@@ -26,7 +26,8 @@ struct NewAuditPlaceholderView: View {
             .frame(maxWidth: .infinity)
         }
         .background(AFCTokens.Color.background)
-        .navigationTitle("Nueva auditoría")
+        .accessibilityIdentifier(AFCAccessibilityID.newAuditScreen)
+        .navigationTitle(String(localized: "audit.new.title"))
         .navigationBarTitleDisplayMode(.inline)
     }
 }

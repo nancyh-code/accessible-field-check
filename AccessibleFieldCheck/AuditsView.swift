@@ -12,14 +12,19 @@ struct AuditsView: View {
 
     var body: some View {
         ScrollView {
-            AFCEmptyState(title: "No hay auditorías todavía") {
-                AFCPrimaryButton(title: "Nueva auditoría") {
+            AFCEmptyState(title: String(localized: "audit.empty.title")) {
+                AFCPrimaryButton(
+                    title: String(localized: "audit.empty.action"),
+                    accessibilityIdentifier: AFCAccessibilityID.auditsNewAuditButton
+                ) {
                     path.append(.newAudit)
                 }
             }
+            .accessibilityIdentifier(AFCAccessibilityID.auditsEmptyState)
         }
         .background(AFCTokens.Color.background)
-        .navigationTitle("Auditorías")
+        .accessibilityIdentifier(AFCAccessibilityID.auditsScreen)
+        .navigationTitle(String(localized: "navigation.audits.title"))
     }
 }
 

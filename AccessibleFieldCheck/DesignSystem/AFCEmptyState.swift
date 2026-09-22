@@ -31,18 +31,19 @@ struct AFCEmptyState<Action: View>: View {
         .frame(maxWidth: 480)
         .padding(AFCTokens.Spacing.large)
         .frame(maxWidth: .infinity)
+        .accessibilityElement(children: .contain)
     }
 }
 
 #Preview("Audits empty") {
-    AFCEmptyState(title: "No hay auditorías todavía") {
-        AFCPrimaryButton(title: "Nueva auditoría", action: {})
+    AFCEmptyState(title: String(localized: "audit.empty.title")) {
+        AFCPrimaryButton(title: String(localized: "audit.empty.action"), action: {})
     }
 }
 
 #Preview("Accessibility extra extra extra large") {
-    AFCEmptyState(title: "No hay auditorías todavía") {
-        AFCPrimaryButton(title: "Nueva auditoría", action: {})
+    AFCEmptyState(title: String(localized: "audit.empty.title")) {
+        AFCPrimaryButton(title: String(localized: "audit.empty.action"), action: {})
     }
     .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
 }

@@ -14,8 +14,8 @@
 
 ## 3. Localization, accessibility, and tests
 
-- [ ] 3.1 Add `Localizable.xcstrings` with Spanish source and English secondary using the `navigation.*`, `audit.*`, and `designSystem.*` keys in `design.md`, and verify Audits copy matches the spec in both locales with no hardcoded user-facing literals in views.
-- [ ] 3.2 Add `AFCAccessibilityID` (`audits.screen`, `audits.emptyState`, `audits.newAuditButton`, `newAudit.screen`), apply identifiers, 44 pt touch targets, and VoiceOver labels only where needed, and verify the screens have no decorative animation.
-- [ ] 3.3 Add Swift Testing coverage in the unit-test target that asserts the required spacing, radius, and semantic color tokens exist and are not `.clear`, and verify the template example test is replaced or removed.
-- [ ] 3.4 Replace template UI tests with one XCTest smoke test that launches the app, finds `audits.screen`, and finds a hittable `audits.newAuditButton`, and verify no extra UI tests are added.
-- [ ] 3.5 Build the app, unit tests, and UI tests for an iPhone simulator and verify they pass without SwiftData, networking, `TabView`, or audit persistence.
+- [x] 3.1 Add `Localizable.xcstrings` with Spanish source and English secondary using the `navigation.*`, `audit.*`, and `designSystem.*` keys in `design.md`, and verify Audits copy matches the spec in both locales with no hardcoded user-facing literals in views.
+- [x] 3.2 Add `AFCAccessibilityID` (`audits.screen`, `audits.emptyState`, `audits.newAuditButton`, `newAudit.screen`), apply identifiers, 44 pt touch targets, and VoiceOver labels only where needed, and verify the screens have no decorative animation.
+- [x] 3.3 Add Swift Testing coverage in the unit-test target that asserts the required spacing, radius, and semantic color tokens exist and are not `.clear`, and verify the template example test is replaced or removed.
+- [x] 3.4 Replace template UI tests with one XCTest smoke test that launches the app, finds `audits.screen`, and finds a hittable `audits.newAuditButton`, and verify no extra UI tests are added.
+- [x] 3.5 Build the app, unit tests, and UI tests for an iPhone simulator and verify they pass without SwiftData, networking, `TabView`, or audit persistence.

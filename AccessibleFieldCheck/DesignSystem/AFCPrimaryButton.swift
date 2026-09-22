@@ -9,9 +9,17 @@ import SwiftUI
 
 struct AFCPrimaryButton: View {
     let title: String
+    var accessibilityIdentifier: String? = nil
     let action: () -> Void
 
     var body: some View {
+        button
+            .buttonStyle(.borderedProminent)
+            .tint(AFCTokens.Color.accent)
+            .modifier(OptionalAccessibilityIdentifier(identifier: accessibilityIdentifier))
+    }
+
+    private var button: some View {
         Button(action: action) {
             Text(title)
                 .font(.headline)
@@ -20,24 +28,34 @@ struct AFCPrimaryButton: View {
                 .padding(.horizontal, AFCTokens.Spacing.medium)
                 .padding(.vertical, AFCTokens.Spacing.small)
         }
-        .buttonStyle(.borderedProminent)
-        .tint(AFCTokens.Color.accent)
+    }
+}
+
+private struct OptionalAccessibilityIdentifier: ViewModifier {
+    let identifier: String?
+
+    func body(content: Content) -> some View {
+        if let identifier {
+            content.accessibilityIdentifier(identifier)
+        } else {
+            content
+        }
     }
 }
 
 #Preview("Default") {
-    AFCPrimaryButton(title: "Nueva auditoría", action: {})
+    AFCPrimaryButton(title: String(localized: "audit.empty.action"), action: {})
         .padding(AFCTokens.Spacing.medium)
 }
 
 #Preview("Accessibility extra extra extra large") {
-    AFCPrimaryButton(title: "Nueva auditoría", action: {})
+    AFCPrimaryButton(title: String(localized: "audit.empty.action"), action: {})
         .padding(AFCTokens.Spacing.medium)
         .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
 }
 
 #Preview("Dark") {
-    AFCPrimaryButton(title: "Nueva auditoría", action: {})
+    AFCPrimaryButton(title: String(localized: "audit.empty.action"), action: {})
         .padding(AFCTokens.Spacing.medium)
         .preferredColorScheme(.dark)
 }

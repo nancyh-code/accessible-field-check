@@ -13,13 +13,17 @@ enum AFCStatus: Hashable, CaseIterable {
     case notApplicable
 
     var title: String {
+        String(localized: String.LocalizationValue(titleKey))
+    }
+
+    var titleKey: String {
         switch self {
         case .pass:
-            return "Pasa"
+            return "designSystem.status.pass"
         case .needsAttention:
-            return "Requiere atención"
+            return "designSystem.status.needsAttention"
         case .notApplicable:
-            return "No aplica"
+            return "designSystem.status.notApplicable"
         }
     }
 
