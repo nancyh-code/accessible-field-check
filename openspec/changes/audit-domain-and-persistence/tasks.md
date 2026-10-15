@@ -1,9 +1,9 @@
 ## 1. Domain model and criterion catalog
 
-- [ ] 1.1 Add `AuditStatus`, `AuditResult`, and `CriterionCategory` as string-backed enums and verify they expose the cases required by the spec.
-- [ ] 1.2 Add `AccessibilityCriterion` and `AccessibilityCriterionCatalog.all` with the 12 stable IDs, categories, sort order 1…12, and title/guidance keys from `design.md`, and verify IDs are unique and match the spec set.
-- [ ] 1.3 Add Spanish source and English String Catalog entries for each `criterion.<id>.title` / `.guidance` and each `criterionCategory.<case>`, and verify no `audit.draft.defaultTitle` key is added and no criterion identity is stored as translated text.
-- [ ] 1.4 Confirm `AuditsView` and `NewAuditPlaceholderView` are unchanged so the New Audit CTA still does not create an audit.
+- [x] 1.1 Add `AuditStatus`, `AuditResult`, and `CriterionCategory` as string-backed enums and verify they expose the cases required by the spec.
+- [x] 1.2 Add `AccessibilityCriterion` and `AccessibilityCriterionCatalog.all` with the 12 stable IDs, categories, sort order 1…12, and title/guidance keys from `design.md`, and verify IDs are unique and match the spec set.
+- [x] 1.3 Add Spanish source and English String Catalog entries for each `criterion.<id>.title` / `.guidance` and each `criterionCategory.<case>`, and verify no `audit.draft.defaultTitle` key is added and no criterion identity is stored as translated text.
+- [x] 1.4 Confirm `AuditsView` and `NewAuditPlaceholderView` are unchanged so the New Audit CTA still does not create an audit.
 
 ## 2. SwiftData persistence
 

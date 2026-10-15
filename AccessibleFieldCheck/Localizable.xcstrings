@@ -1,150 +1,654 @@
 {
-  "sourceLanguage" : "es",
-  "strings" : {
-    "audit.empty.action" : {
-      "comment" : "Primary action on the empty Audits screen.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New audit"
+  "sourceLanguage": "es",
+  "strings": {
+    "audit.empty.action": {
+      "comment": "Primary action on the empty Audits screen.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New audit"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nueva auditoría"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva auditoría"
           }
         }
       }
     },
-    "audit.empty.title" : {
-      "comment" : "Empty-state title when no audits exist.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No audits yet"
+    "audit.empty.title": {
+      "comment": "Empty-state title when no audits exist.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No audits yet"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No hay auditorías todavía"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay auditorías todavía"
           }
         }
       }
     },
-    "audit.new.placeholder" : {
-      "comment" : "Copy on the temporary New Audit placeholder screen.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Placeholder"
+    "audit.new.placeholder": {
+      "comment": "Copy on the temporary New Audit placeholder screen.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Placeholder"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Marcador de posición"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcador de posición"
           }
         }
       }
     },
-    "audit.new.title" : {
-      "comment" : "Navigation title for the New Audit placeholder.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New audit"
+    "audit.new.title": {
+      "comment": "Navigation title for the New Audit placeholder.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New audit"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nueva auditoría"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva auditoría"
           }
         }
       }
     },
-    "designSystem.status.needsAttention" : {
-      "comment" : "Status badge label for needs attention.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Needs attention"
+    "designSystem.status.needsAttention": {
+      "comment": "Status badge label for needs attention.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Needs attention"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Requiere atención"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requiere atención"
           }
         }
       }
     },
-    "designSystem.status.notApplicable" : {
-      "comment" : "Status badge label for not applicable.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Not applicable"
+    "designSystem.status.notApplicable": {
+      "comment": "Status badge label for not applicable.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not applicable"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No aplica"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No aplica"
           }
         }
       }
     },
-    "designSystem.status.pass" : {
-      "comment" : "Status badge label for pass.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pass"
+    "designSystem.status.pass": {
+      "comment": "Status badge label for pass.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pass"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pasa"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasa"
           }
         }
       }
     },
-    "navigation.audits.title" : {
-      "comment" : "Navigation title for the Audits destination.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Audits"
+    "navigation.audits.title": {
+      "comment": "Navigation title for the Audits destination.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audits"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Auditorías"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auditorías"
+          }
+        }
+      }
+    },
+    "criterion.clearButtonLabels.title": {
+      "comment": "Title for the clearButtonLabels accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear button labels"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etiquetas claras de botones"
+          }
+        }
+      }
+    },
+    "criterion.clearButtonLabels.guidance": {
+      "comment": "Guidance for the clearButtonLabels accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buttons describe the action, not only an icon."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los botones describen la acción, no solo un icono."
+          }
+        }
+      }
+    },
+    "criterion.colorContrast.title": {
+      "comment": "Title for the colorContrast accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color contrast"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contraste de color"
+          }
+        }
+      }
+    },
+    "criterion.colorContrast.guidance": {
+      "comment": "Guidance for the colorContrast accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text and meaningful elements contrast enough with the background."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El texto y los elementos significativos contrastan lo suficiente con el fondo."
+          }
+        }
+      }
+    },
+    "criterion.colorIndependentMeaning.title": {
+      "comment": "Title for the colorIndependentMeaning accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color-independent meaning"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Significado independiente del color"
+          }
+        }
+      }
+    },
+    "criterion.colorIndependentMeaning.guidance": {
+      "comment": "Guidance for the colorIndependentMeaning accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meaning is not conveyed by color alone."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El significado no se transmite solo con el color."
+          }
+        }
+      }
+    },
+    "criterion.contentScaling.title": {
+      "comment": "Title for the contentScaling accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Content scaling"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escalado de contenido"
+          }
+        }
+      }
+    },
+    "criterion.contentScaling.guidance": {
+      "comment": "Guidance for the contentScaling accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Content is not clipped or lost at large text sizes."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El contenido no se recorta ni se pierde con tamaños de texto grandes."
+          }
+        }
+      }
+    },
+    "criterion.dynamicType.title": {
+      "comment": "Title for the dynamicType accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dynamic Type"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto dinámico"
+          }
+        }
+      }
+    },
+    "criterion.dynamicType.guidance": {
+      "comment": "Guidance for the dynamicType accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text adapts to system accessibility text sizes."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El texto se adapta a los tamaños de accesibilidad del sistema."
+          }
+        }
+      }
+    },
+    "criterion.errorIdentification.title": {
+      "comment": "Title for the errorIdentification accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Error identification"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Identificación de errores"
+          }
+        }
+      }
+    },
+    "criterion.errorIdentification.guidance": {
+      "comment": "Guidance for the errorIdentification accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Errors are identified clearly and accessibly."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los errores se identifican de forma clara y accesible."
+          }
+        }
+      }
+    },
+    "criterion.focusOrder.title": {
+      "comment": "Title for the focusOrder accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Focus order"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orden de foco"
+          }
+        }
+      }
+    },
+    "criterion.focusOrder.guidance": {
+      "comment": "Guidance for the focusOrder accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceOver focus order is logical."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El orden de foco de VoiceOver es lógico."
+          }
+        }
+      }
+    },
+    "criterion.formLabels.title": {
+      "comment": "Title for the formLabels accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Form labels"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etiquetas de formulario"
+          }
+        }
+      }
+    },
+    "criterion.formLabels.guidance": {
+      "comment": "Guidance for the formLabels accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fields have visible and accessible labels."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los campos tienen etiquetas visibles y accesibles."
+          }
+        }
+      }
+    },
+    "criterion.modalAccessibility.title": {
+      "comment": "Title for the modalAccessibility accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modal accessibility"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accesibilidad de modales"
+          }
+        }
+      }
+    },
+    "criterion.modalAccessibility.guidance": {
+      "comment": "Guidance for the modalAccessibility accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modals and sheets are announced and can be dismissed accessibly."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los modales y hojas se anuncian y se pueden cerrar de forma accesible."
+          }
+        }
+      }
+    },
+    "criterion.reduceMotion.title": {
+      "comment": "Title for the reduceMotion accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reduce Motion"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reducir movimiento"
+          }
+        }
+      }
+    },
+    "criterion.reduceMotion.guidance": {
+      "comment": "Guidance for the reduceMotion accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Animation respects Reduce Motion."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las animaciones respetan Reducir movimiento."
+          }
+        }
+      }
+    },
+    "criterion.touchTargetSize.title": {
+      "comment": "Title for the touchTargetSize accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Touch target size"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamaño de destino táctil"
+          }
+        }
+      }
+    },
+    "criterion.touchTargetSize.guidance": {
+      "comment": "Guidance for the touchTargetSize accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Interactive controls have a practical tappable area of at least 44 pt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los controles interactivos tienen un área táctil práctica de al menos 44 pt."
+          }
+        }
+      }
+    },
+    "criterion.voiceOverLabels.title": {
+      "comment": "Title for the voiceOverLabels accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceOver labels"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etiquetas de VoiceOver"
+          }
+        }
+      }
+    },
+    "criterion.voiceOverLabels.guidance": {
+      "comment": "Guidance for the voiceOverLabels accessibility criterion.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controls have labels VoiceOver can announce."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los controles tienen etiquetas que VoiceOver puede anunciar."
+          }
+        }
+      }
+    },
+    "criterionCategory.feedbackAndErrors": {
+      "comment": "Category label for feedbackAndErrors.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback and errors"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retroalimentación y errores"
+          }
+        }
+      }
+    },
+    "criterionCategory.interaction": {
+      "comment": "Category label for interaction.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Interaction"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Interacción"
+          }
+        }
+      }
+    },
+    "criterionCategory.navigation": {
+      "comment": "Category label for navigation.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Navigation"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Navegación"
+          }
+        }
+      }
+    },
+    "criterionCategory.textAndContent": {
+      "comment": "Category label for textAndContent.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text and content"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto y contenido"
           }
         }
       }
     }
   },
-  "version" : "1.1"
+  "version": "1.1"
 }
