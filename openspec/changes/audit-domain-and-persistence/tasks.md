@@ -14,8 +14,8 @@
 
 ## 3. Focused domain and persistence tests
 
-- [ ] 3.1 Add Swift Testing coverage for catalog count, unique IDs, required ID set, and localization keys (not display strings), and verify those tests pass.
-- [ ] 3.2 Add in-memory SwiftData tests for draft initialization with a supplied title, default `notReviewed`, empty notes, and no duplicate criteria, and verify they pass.
-- [ ] 3.3 Add tests for result updates, note add/edit/remove, completion with unfinished items, and reopen preserving results, using explicit `Date` values where timestamps matter, and verify they pass.
-- [ ] 3.4 Add a persistence round-trip test (new `ModelContext` on the same in-memory store) and a fetch-order test that uses distinct supplied `updatedAt` values, and verify they pass.
-- [ ] 3.5 Run the focused unit-test suite and a generic iOS Simulator build, and verify no new UI tests, GitHub Actions, or Fastlane files were added.
+- [x] 3.1 Add Swift Testing coverage for catalog count, unique IDs, required ID set, and localization keys (not display strings), and verify those tests pass.
+- [x] 3.2 Add in-memory SwiftData tests for draft initialization with a supplied title, default `notReviewed`, empty notes, and no duplicate criteria, and verify they pass.
+- [x] 3.3 Add tests for result updates, note add/edit/remove, completion with unfinished items, and reopen preserving results, using explicit `Date` values where timestamps matter, and verify they pass.
+- [x] 3.4 Add a persistence round-trip test (new `ModelContext` on the same in-memory store) and a fetch-order test that uses distinct supplied `updatedAt` values, and verify they pass.
+- [x] 3.5 Run the focused unit-test suite and a generic iOS Simulator build, and verify no new UI tests, GitHub Actions, or Fastlane files were added.
