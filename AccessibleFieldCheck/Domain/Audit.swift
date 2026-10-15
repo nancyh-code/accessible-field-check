@@ -6,16 +6,23 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Audit: Hashable, Identifiable, Sendable {
+@Model
+final class Audit {
     var identifier: UUID
     var title: String
     var createdAt: Date
     var updatedAt: Date
-    var status: AuditStatus
+    /// SwiftData stores `AuditStatus` as its `String` raw value.
+    var statusRaw: String
+    @Relationship(deleteRule: .cascade, inverse: \AuditItem.audit)
     var items: [AuditItem]
 
-    var id: UUID { identifier }
+    var status: AuditStatus {
+        get { AuditStatus(rawValue: statusRaw) ?? .draft }
+        set { statusRaw = newValue.rawValue }
+    }
 
     init(
         identifier: UUID = UUID(),
@@ -29,7 +36,7 @@ struct Audit: Hashable, Identifiable, Sendable {
         self.title = title
         self.createdAt = createdAt
         self.updatedAt = updatedAt ?? createdAt
-        self.status = status
+        self.statusRaw = status.rawValue
         self.items = items
     }
 }

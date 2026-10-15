@@ -7,10 +7,10 @@
 
 ## 2. SwiftData persistence
 
-- [ ] 2.1 Add SwiftData `@Model` types `Audit` and `AuditItem` with the fields and cascade relationship in `design.md`, and verify a `ModelContainer` can be created for both.
-- [ ] 2.2 Add `AuditStore.createDraft(title:now: Date = .now)` that persists the caller-supplied title and one `notReviewed` item per catalog criterion with no duplicate `criterionID`s, and verify it does not write a localized default title.
-- [ ] 2.3 Implement result update, note add/edit/remove, complete, reopen, and fetch-by-`updatedAt` descending on `AuditStore`, with `now: Date = .now` on mutations, and verify complete/reopen do not rewrite or drop items.
-- [ ] 2.4 Register `.modelContainer(for: [Audit.self, AuditItem.self])` on the app scene without changing navigation or landing copy, and verify the app still builds.
+- [x] 2.1 Add SwiftData `@Model` types `Audit` and `AuditItem` with the fields and cascade relationship in `design.md`, and verify a `ModelContainer` can be created for both.
+- [x] 2.2 Add `AuditStore.createDraft(title:now: Date = .now)` that persists the caller-supplied title and one `notReviewed` item per catalog criterion with no duplicate `criterionID`s, and verify it does not write a localized default title.
+- [x] 2.3 Implement result update, note add/edit/remove, complete, reopen, and fetch-by-`updatedAt` descending on `AuditStore`, with `now: Date = .now` on mutations, and verify complete/reopen do not rewrite or drop items.
+- [x] 2.4 Register `.modelContainer(for: [Audit.self, AuditItem.self])` on the app scene without changing navigation or landing copy, and verify the app still builds.
 
 ## 3. Focused domain and persistence tests
 

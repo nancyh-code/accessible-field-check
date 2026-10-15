@@ -6,15 +6,22 @@
 //
 
 import Foundation
+import SwiftData
 
-struct AuditItem: Hashable, Identifiable, Sendable {
+@Model
+final class AuditItem {
     var identifier: UUID
     var criterionID: String
-    var result: AuditResult
+    /// SwiftData stores `AuditResult` as its `String` raw value.
+    var resultRaw: String
     var note: String?
     var updatedAt: Date
+    var audit: Audit?
 
-    var id: UUID { identifier }
+    var result: AuditResult {
+        get { AuditResult(rawValue: resultRaw) ?? .notReviewed }
+        set { resultRaw = newValue.rawValue }
+    }
 
     init(
         identifier: UUID = UUID(),
@@ -25,7 +32,7 @@ struct AuditItem: Hashable, Identifiable, Sendable {
     ) {
         self.identifier = identifier
         self.criterionID = criterionID
-        self.result = result
+        self.resultRaw = result.rawValue
         self.note = note
         self.updatedAt = updatedAt
     }
