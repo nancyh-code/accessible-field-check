@@ -5,10 +5,13 @@
 //  Created by Nancy Hernandez on 21-09-26.
 //
 
+import SwiftData
 import SwiftUI
 
 enum AppDestination: Hashable {
     case newAudit
+    case checklist(UUID)
+    case summary(UUID)
 }
 
 struct AppRootView: View {
@@ -20,7 +23,11 @@ struct AppRootView: View {
                 .navigationDestination(for: AppDestination.self) { destination in
                     switch destination {
                     case .newAudit:
-                        NewAuditPlaceholderView()
+                        NewAuditView(path: $path)
+                    case .checklist(let auditID):
+                        AuditChecklistView(auditID: auditID)
+                    case .summary(let auditID):
+                        AuditSummaryView(auditID: auditID)
                     }
                 }
         }
@@ -29,4 +36,5 @@ struct AppRootView: View {
 
 #Preview {
     AppRootView()
+        .modelContainer(for: [Audit.self, AuditItem.self], inMemory: true)
 }

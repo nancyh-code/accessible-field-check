@@ -37,26 +37,8 @@
         }
       }
     },
-    "audit.new.placeholder": {
-      "comment": "Copy on the temporary New Audit placeholder screen.",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Placeholder"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Marcador de posición"
-          }
-        }
-      }
-    },
     "audit.new.title": {
-      "comment": "Navigation title for the New Audit placeholder.",
+      "comment": "Navigation title for the New Audit form.",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -645,6 +627,240 @@
           "stringUnit": {
             "state": "translated",
             "value": "Texto y contenido"
+          }
+        }
+      }
+    },
+    "audit.status.draft": {
+      "comment": "Audit status when the review is still in progress.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draft"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Borrador"
+          }
+        }
+      }
+    },
+    "audit.status.completed": {
+      "comment": "Audit status when the review is finished.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completada"
+          }
+        }
+      }
+    },
+    "audit.list.progress": {
+      "comment": "Reviewed-item progress on an Audits list row. First value is reviewed count, second is total.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld of %lld reviewed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld revisados"
+          }
+        }
+      }
+    },
+    "audit.new.titleField.label": {
+      "comment": "Accessible label for the New Audit title field.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Title"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Título"
+          }
+        }
+      }
+    },
+    "audit.new.titleField.placeholder": {
+      "comment": "Presentation-only placeholder for the New Audit title field. Not persisted.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audit name"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre de la auditoría"
+          }
+        }
+      }
+    },
+    "audit.new.titleRequired": {
+      "comment": "Validation error when the New Audit title is empty or whitespace-only.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Title is required"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El título es obligatorio"
+          }
+        }
+      }
+    },
+    "audit.new.context.label": {
+      "comment": "Label for the fixed audit context shown on New Audit.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Context"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contexto"
+          }
+        }
+      }
+    },
+    "audit.new.context.mobileApp": {
+      "comment": "Fixed V1 audit context. Not a platform selector.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mobile app"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aplicación móvil"
+          }
+        }
+      }
+    },
+    "audit.new.create": {
+      "comment": "Primary action that creates a draft audit.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create audit"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear auditoría"
+          }
+        }
+      }
+    },
+    "audit.checklist.title": {
+      "comment": "Navigation title for the checklist destination.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checklist"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lista de verificación"
+          }
+        }
+      }
+    },
+    "audit.checklist.shell": {
+      "comment": "Temporary checklist shell copy until Checkpoint B.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The checklist will be available in the next step."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La lista de verificación estará disponible en el siguiente paso."
+          }
+        }
+      }
+    },
+    "audit.summary.title": {
+      "comment": "Navigation title for the summary destination.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Summary"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resumen"
+          }
+        }
+      }
+    },
+    "audit.summary.shell": {
+      "comment": "Temporary summary shell copy until Checkpoint B.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The summary will be available in the next step."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El resumen estará disponible en el siguiente paso."
           }
         }
       }

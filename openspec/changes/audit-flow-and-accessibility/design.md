@@ -50,7 +50,7 @@ Do not add `@Observable`. Shared mutation is SwiftData; presentation state is lo
 
 ### Persistence boundary: reuse `AuditStore` as-is
 
-Views call `createDraft`, `updateResult`, `updateNote`, `complete`, and `reopen`. Title passed to `createDraft` is `trimmingCharacters(in: .whitespacesAndNewlines)` after validation; do not substitute a localized string. Production omits `now:` (defaults to `.now`). Do not add store methods for progress or summary counts.
+Views call `createDraft`, `updateResult`, `updateNote`, `complete`, and `reopen`. Trim with `trimmingCharacters(in: .whitespacesAndNewlines)` only to reject empty/whitespace titles. When valid, pass the original user-authored title to `createDraft` exactly as entered. Do not substitute a localized string or persist a trimmed copy. Production omits `now:` (defaults to `.now`). Do not add store methods for progress or summary counts.
 
 ### Presentation helpers, not UI models
 

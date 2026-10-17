@@ -1,11 +1,11 @@
 ## 1. Audits list and New Audit
 
-- [ ] 1.1 Expand `AppDestination` with `checklist(UUID)` and `summary(UUID)`, register those destinations on the existing `NavigationStack`, delete `NewAuditPlaceholderView`, and verify the app still builds with no `TabView`.
-- [ ] 1.2 Replace the always-empty `AuditsView` with `@Query` sorted by `updatedAt` descending, keep `AFCEmptyState` when the query is empty, show title/status/progress/date on each row, route draft taps to checklist and completed taps to summary, and verify empty vs list states.
-- [ ] 1.3 Add a New Audit action on the list (toolbar or equivalent) in addition to the empty-state CTA, reuse `audits.newAuditButton` where it remains the primary create action, and verify both empty and non-empty Audits can open New Audit.
-- [ ] 1.4 Replace the placeholder with `NewAuditView`: labeled title field, fixed Mobile App context, create action, `newAudit.screen` identifier, and verify whitespace-only titles show an announced error and do not call `createDraft`.
-- [ ] 1.5 On a valid trimmed title, call `AuditStore.createDraft(title:)`, replace `.newAudit` on the path with `.checklist(id)`, persist that exact title, and verify no localized default title is written.
-- [ ] 1.6 Add Spanish source and English strings required by the list and form, stop using `audit.new.placeholder`, and verify no `audit.draft.defaultTitle` key is added.
+- [x] 1.1 Expand `AppDestination` with `checklist(UUID)` and `summary(UUID)`, register those destinations on the existing `NavigationStack`, delete `NewAuditPlaceholderView`, and verify the app still builds with no `TabView`.
+- [x] 1.2 Replace the always-empty `AuditsView` with `@Query` sorted by `updatedAt` descending, keep `AFCEmptyState` when the query is empty, show title/status/progress/date on each row, route draft taps to checklist and completed taps to summary, and verify empty vs list states.
+- [x] 1.3 Add a New Audit action on the list (toolbar or equivalent) in addition to the empty-state CTA, reuse `audits.newAuditButton` where it remains the primary create action, and verify both empty and non-empty Audits can open New Audit.
+- [x] 1.4 Replace the placeholder with `NewAuditView`: labeled title field, fixed Mobile App context, create action, `newAudit.screen` identifier, and verify whitespace-only titles show an announced error and do not call `createDraft`.
+- [x] 1.5 On a valid trimmed title, call `AuditStore.createDraft(title:)`, replace `.newAudit` on the path with `.checklist(id)`, persist that exact title, and verify no localized default title is written.
+- [x] 1.6 Add Spanish source and English strings required by the list and form, stop using `audit.new.placeholder`, and verify no `audit.draft.defaultTitle` key is added.
 
 ## 2. Checklist and summary
 
