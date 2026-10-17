@@ -8,9 +8,36 @@
 import SwiftUI
 
 enum AFCStatus: Hashable, CaseIterable {
+    case notReviewed
     case pass
     case needsAttention
     case notApplicable
+
+    init(_ result: AuditResult) {
+        switch result {
+        case .notReviewed:
+            self = .notReviewed
+        case .pass:
+            self = .pass
+        case .needsAttention:
+            self = .needsAttention
+        case .notApplicable:
+            self = .notApplicable
+        }
+    }
+
+    var result: AuditResult {
+        switch self {
+        case .notReviewed:
+            .notReviewed
+        case .pass:
+            .pass
+        case .needsAttention:
+            .needsAttention
+        case .notApplicable:
+            .notApplicable
+        }
+    }
 
     var title: String {
         String(localized: String.LocalizationValue(titleKey))
@@ -18,6 +45,8 @@ enum AFCStatus: Hashable, CaseIterable {
 
     var titleKey: String {
         switch self {
+        case .notReviewed:
+            return "designSystem.status.notReviewed"
         case .pass:
             return "designSystem.status.pass"
         case .needsAttention:
@@ -29,6 +58,8 @@ enum AFCStatus: Hashable, CaseIterable {
 
     var symbolName: String {
         switch self {
+        case .notReviewed:
+            return "circle"
         case .pass:
             return "checkmark.circle.fill"
         case .needsAttention:
@@ -40,6 +71,8 @@ enum AFCStatus: Hashable, CaseIterable {
 
     var color: SwiftUI.Color {
         switch self {
+        case .notReviewed:
+            return AFCTokens.Color.secondaryText
         case .pass:
             return AFCTokens.Color.success
         case .needsAttention:

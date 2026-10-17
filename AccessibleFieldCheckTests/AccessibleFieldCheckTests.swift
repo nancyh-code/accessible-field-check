@@ -27,12 +27,14 @@ struct DesignSystemTests {
     }
 
     @Test func statusRepresentationsIncludeIconAndText() {
-        #expect(AFCStatus.allCases == [.pass, .needsAttention, .notApplicable])
+        #expect(AFCStatus.allCases == [.notReviewed, .pass, .needsAttention, .notApplicable])
 
+        #expect(AFCStatus.notReviewed.symbolName == "circle")
         #expect(AFCStatus.pass.symbolName == "checkmark.circle.fill")
         #expect(AFCStatus.needsAttention.symbolName == "exclamationmark.triangle.fill")
         #expect(AFCStatus.notApplicable.symbolName == "minus.circle.fill")
 
+        #expect(AFCStatus.notReviewed.titleKey == "designSystem.status.notReviewed")
         #expect(AFCStatus.pass.titleKey == "designSystem.status.pass")
         #expect(AFCStatus.needsAttention.titleKey == "designSystem.status.needsAttention")
         #expect(AFCStatus.notApplicable.titleKey == "designSystem.status.notApplicable")

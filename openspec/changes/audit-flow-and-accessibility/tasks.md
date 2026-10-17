@@ -9,12 +9,12 @@
 
 ## 2. Checklist and summary
 
-- [ ] 2.1 Add `AuditChecklistView` that joins items to `AccessibilityCriterionCatalog` by `criterionID`, groups by category in catalog `sortOrder`, shows localized title and guidance, and verify all 12 criteria appear once.
-- [ ] 2.2 Add a wrapping four-option result control (icon + text + semantic color, 44 pt minimum, not a compact segmented picker) wired to `AuditStore.updateResult`, extend `AFCStatus` with `notReviewed` if needed, and verify a result change persists and is not color-only.
-- [ ] 2.3 Add inline expandable note editing on the same screen via `AuditStore.updateNote`, and verify add/edit/remove without a per-criterion destination.
-- [ ] 2.4 Show “N of 12 reviewed” using `AuditReviewProgress`, add Finish with a confirmation dialog only when unreviewed items remain, call `AuditStore.complete`, replace the path with `.summary(id)`, and verify completion keeps `notReviewed` items.
-- [ ] 2.5 Add `AuditSummaryView` with title, status, four counts, and a Needs Attention list that includes notes, plus reopen via `AuditStore.reopen` that replaces the path with `.checklist(id)`, and verify results and notes are preserved.
-- [ ] 2.6 Add `AuditReviewProgress` pure helpers and Swift Testing for reviewed count and result tallies, and verify those tests pass without duplicating `AuditStore` coverage.
+- [x] 2.1 Add `AuditChecklistView` that joins items to `AccessibilityCriterionCatalog` by `criterionID`, groups by category in catalog `sortOrder`, shows localized title and guidance, and verify all 12 criteria appear once.
+- [x] 2.2 Add a wrapping four-option result control (icon + text + semantic color, 44 pt minimum, not a compact segmented picker) wired to `AuditStore.updateResult`, extend `AFCStatus` with `notReviewed` if needed, and verify a result change persists and is not color-only.
+- [x] 2.3 Add inline expandable note editing on the same screen via `AuditStore.updateNote`, and verify add/edit/remove without a per-criterion destination.
+- [x] 2.4 Show “N of 12 reviewed” using `AuditReviewProgress`, add Finish with a confirmation dialog only when unreviewed items remain, call `AuditStore.complete`, replace the path with `.summary(id)`, and verify completion keeps `notReviewed` items.
+- [x] 2.5 Add `AuditSummaryView` with title, status, four counts, and a Needs Attention list that includes notes, plus reopen via `AuditStore.reopen` that replaces the path with `.checklist(id)`, and verify results and notes are preserved.
+- [x] 2.6 Add `AuditReviewProgress` pure helpers and Swift Testing for reviewed count and result tallies, and verify those tests pass without duplicating `AuditStore` coverage.
 
 ## 3. Accessibility and UI tests
 

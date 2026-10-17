@@ -864,6 +864,348 @@
           }
         }
       }
+    },
+    "designSystem.status.notReviewed": {
+      "comment": "Status badge and result control label for not reviewed.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not reviewed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin revisar"
+          }
+        }
+      }
+    },
+    "audit.checklist.finish": {
+      "comment": "Primary action that completes the current audit.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish audit"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finalizar auditoría"
+          }
+        }
+      }
+    },
+    "audit.checklist.finishConfirm.title": {
+      "comment": "Confirmation title when finishing with unreviewed criteria.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unreviewed criteria"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criterios sin revisar"
+          }
+        }
+      }
+    },
+    "audit.checklist.finishConfirm.message": {
+      "comment": "Confirmation message. The value is the unreviewed count.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld criteria are still not reviewed."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quedan %lld criterios sin revisar."
+          }
+        }
+      }
+    },
+    "audit.checklist.finishAnyway": {
+      "comment": "Confirms completion even if criteria remain unreviewed.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish anyway"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finalizar de todos modos"
+          }
+        }
+      }
+    },
+    "audit.checklist.cancel": {
+      "comment": "Cancels the finish confirmation.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelar"
+          }
+        }
+      }
+    },
+    "audit.checklist.note": {
+      "comment": "Label for the optional criterion note.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Note"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nota"
+          }
+        }
+      }
+    },
+    "audit.checklist.note.placeholder": {
+      "comment": "Placeholder for the criterion note field. Not persisted unless saved.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add a note"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir una nota"
+          }
+        }
+      }
+    },
+    "audit.checklist.note.save": {
+      "comment": "Saves the criterion note.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save note"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar nota"
+          }
+        }
+      }
+    },
+    "audit.checklist.note.remove": {
+      "comment": "Removes the criterion note.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove note"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar nota"
+          }
+        }
+      }
+    },
+    "audit.summary.needsAttention.section": {
+      "comment": "Summary section listing criteria that need attention.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Needs attention"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requiere atención"
+          }
+        }
+      }
+    },
+    "audit.summary.needsAttention.empty": {
+      "comment": "Empty message when no criteria need attention.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No criteria need attention."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ningún criterio requiere atención."
+          }
+        }
+      }
+    },
+    "audit.summary.count.total": {
+      "comment": "Summary total criteria count.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld criteria"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld criterios"
+          }
+        }
+      }
+    },
+    "audit.summary.count.pass": {
+      "comment": "Summary pass count.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld passed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld correctos"
+          }
+        }
+      }
+    },
+    "audit.summary.count.needsAttention": {
+      "comment": "Summary needs-attention count.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld need attention"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld requieren atención"
+          }
+        }
+      }
+    },
+    "audit.summary.count.notApplicable": {
+      "comment": "Summary not-applicable count.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld not applicable"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld no aplican"
+          }
+        }
+      }
+    },
+    "audit.summary.count.notReviewed": {
+      "comment": "Summary not-reviewed count.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld not reviewed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sin revisar"
+          }
+        }
+      }
+    },
+    "audit.summary.reopen": {
+      "comment": "Reopens a completed audit for editing.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reopen review"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reabrir revisión"
+          }
+        }
+      }
+    },
+    "audit.unavailable.title": {
+      "comment": "Shown when a checklist or summary cannot find its audit.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This audit is not available"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta auditoría no está disponible"
+          }
+        }
+      }
     }
   },
   "version": "1.1"

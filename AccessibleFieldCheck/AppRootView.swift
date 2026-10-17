@@ -25,9 +25,9 @@ struct AppRootView: View {
                     case .newAudit:
                         NewAuditView(path: $path)
                     case .checklist(let auditID):
-                        AuditChecklistView(auditID: auditID)
+                        AuditChecklistView(auditID: auditID, path: $path)
                     case .summary(let auditID):
-                        AuditSummaryView(auditID: auditID)
+                        AuditSummaryView(auditID: auditID, path: $path)
                     }
                 }
         }

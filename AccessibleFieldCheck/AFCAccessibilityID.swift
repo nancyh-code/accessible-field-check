@@ -14,5 +14,7 @@ enum AFCAccessibilityID {
     static let newAuditCreateButton = "newAudit.createButton"
     static let newAuditTitleError = "newAudit.titleError"
     static let checklistScreen = "checklist.screen"
+    static let checklistFinishButton = "checklist.finishButton"
     static let summaryScreen = "summary.screen"
+    static let summaryReopenButton = "summary.reopenButton"
 }
