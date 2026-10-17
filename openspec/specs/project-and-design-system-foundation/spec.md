@@ -31,17 +31,6 @@ When the user has no audits, the Audits screen SHALL show an empty state. The so
 - **WHEN** the app locale is English and the user has no audits
 - **THEN** the empty state displays "No audits yet"
 
-### Requirement: Empty state offers a New Audit action that opens a placeholder
-The empty Audits screen SHALL offer a primary action whose source-language copy is "Nueva auditoría" and whose English copy is "New audit". Activating that action SHALL push a New Audit placeholder onto the navigation stack. The placeholder SHALL NOT create or persist an audit. Returning from the placeholder SHALL still show the empty Audits state.
-
-#### Scenario: Primary action opens the placeholder
-- **WHEN** the user activates the New Audit action from the empty Audits screen
-- **THEN** the app shows a New Audit placeholder destination on the navigation stack
-
-#### Scenario: Placeholder does not persist an audit
-- **WHEN** the user opens the New Audit placeholder and navigates back to Audits
-- **THEN** the Audits screen still shows the empty state
-
 ### Requirement: Small design-system token set
 Foundation screens and reusable components SHALL use a small shared token set. Spacing tokens SHALL be xSmall, small, medium, large, and xLarge. Corner-radius tokens SHALL be small, medium, and large. Semantic color tokens SHALL be background, surface, primaryText, secondaryText, accent, success, warning, and critical. Body and title typography SHALL use semantic system text styles rather than hardcoded point sizes.
 
@@ -76,14 +65,14 @@ User-facing strings SHALL come from a localization catalog rather than scattered
 - **THEN** user-facing copy on the Audits screen is English, including the navigation title "Audits"
 
 ### Requirement: Accessibility foundation on the first screens
-The Audits landing and New Audit placeholder SHALL support Dynamic Type. Interactive controls SHALL provide a minimum tappable area of 44 by 44 points. VoiceOver labels SHALL be supplied where system inference is insufficient. These screens SHALL NOT play decorative animation. UI tests SHALL be able to locate the Audits screen and the primary action through stable, language-independent accessibility identifiers.
+The Audits landing and New Audit form SHALL support Dynamic Type. Interactive controls SHALL provide a minimum tappable area of 44 by 44 points. VoiceOver labels SHALL be supplied where system inference is insufficient. These screens SHALL NOT play decorative animation. UI tests SHALL be able to locate the Audits screen and the primary action through stable, language-independent accessibility identifiers.
 
 #### Scenario: Primary action meets the minimum touch target
 - **WHEN** the empty Audits screen is shown
 - **THEN** the New Audit control’s tappable area is at least 44 by 44 points
 
 #### Scenario: No decorative motion
-- **WHEN** the Audits screen or New Audit placeholder is shown
+- **WHEN** the Audits screen or New Audit form is shown
 - **THEN** the screens do not play decorative animation
 
 #### Scenario: Stable identifiers for UI tests
