@@ -18,8 +18,8 @@
 
 ## 3. Accessibility and UI tests
 
-- [ ] 3.1 Apply Dynamic Type, VoiceOver labels, 44 pt targets, labeled title field, announced validation, navigation titles, dark mode, and iPhone/iPad landscape-safe layout with no clipping fixed heights, and verify the four workflow screens remain readable at accessibility extra-large text.
-- [ ] 3.2 Switch `AccessibleFieldCheckApp` to an in-memory empty `ModelContainer` when launch argument `-ui-testing-empty-store` is present, add identifiers needed for the happy path and validation, and verify production launch still uses the on-disk container.
-- [ ] 3.3 Add an XCTest UI happy path that launches with the empty-store argument, creates a titled audit, sets two results including `needsAttention`, adds one note, finishes, asserts the summary, and returns to Audits showing the persisted row.
-- [ ] 3.4 Add an XCTest UI case that launches with the empty-store argument, submits an empty title, and verify no audit row appears and the validation error exists.
-- [ ] 3.5 Replace placeholder smoke assertions, run the unit-test target plus UI tests and a generic iOS Simulator build, and verify no GitHub Actions or Fastlane files were added.
+- [x] 3.1 Apply Dynamic Type, VoiceOver labels, 44 pt targets, labeled title field, announced validation, navigation titles, dark mode, and iPhone/iPad landscape-safe layout with no clipping fixed heights, and verify the four workflow screens remain readable at accessibility extra-large text.
+- [x] 3.2 Switch `AccessibleFieldCheckApp` to an in-memory empty `ModelContainer` when launch argument `-ui-testing-empty-store` is present, add identifiers needed for the happy path and validation, and verify production launch still uses the on-disk container.
+- [x] 3.3 Add an XCTest UI happy path that launches with the empty-store argument, creates a titled audit, sets two results including `needsAttention`, adds one note, finishes, asserts the summary, and returns to Audits showing the persisted row.
+- [x] 3.4 Add an XCTest UI case that launches with the empty-store argument, submits an empty title, and verify no audit row appears and the validation error exists.
+- [x] 3.5 Replace placeholder smoke assertions, run the unit-test target plus UI tests and a generic iOS Simulator build, and verify no GitHub Actions or Fastlane files were added.

@@ -811,24 +811,6 @@
         }
       }
     },
-    "audit.checklist.shell": {
-      "comment": "Temporary checklist shell copy until Checkpoint B.",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The checklist will be available in the next step."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La lista de verificación estará disponible en el siguiente paso."
-          }
-        }
-      }
-    },
     "audit.summary.title": {
       "comment": "Navigation title for the summary destination.",
       "extractionState": "manual",
@@ -843,24 +825,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Resumen"
-          }
-        }
-      }
-    },
-    "audit.summary.shell": {
-      "comment": "Temporary summary shell copy until Checkpoint B.",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The summary will be available in the next step."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "El resumen estará disponible en el siguiente paso."
           }
         }
       }

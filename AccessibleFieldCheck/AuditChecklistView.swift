@@ -71,15 +71,15 @@ struct AuditChecklistView: View {
         }
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
-        .safeAreaInset(edge: .bottom) {
-            AFCPrimaryButton(
-                title: String(localized: "audit.checklist.finish"),
-                accessibilityIdentifier: AFCAccessibilityID.checklistFinishButton
-            ) {
-                attemptFinish(audit, progress: progress)
+        .toolbar {
+            ToolbarItem(placement: .bottomBar) {
+                AFCPrimaryButton(
+                    title: String(localized: "audit.checklist.finish"),
+                    accessibilityIdentifier: AFCAccessibilityID.checklistFinishButton
+                ) {
+                    attemptFinish(audit, progress: progress)
+                }
             }
-            .padding(AFCTokens.Spacing.medium)
-            .background(AFCTokens.Color.background)
         }
         .confirmationDialog(
             String(localized: "audit.checklist.finishConfirm.title"),
@@ -89,6 +89,7 @@ struct AuditChecklistView: View {
             Button(String(localized: "audit.checklist.finishAnyway")) {
                 complete(audit)
             }
+            .accessibilityIdentifier(AFCAccessibilityID.checklistFinishAnyway)
             Button(String(localized: "audit.checklist.cancel"), role: .cancel) {}
         } message: {
             Text(unreviewedMessage(progress.notReviewed))
@@ -109,25 +110,36 @@ struct AuditChecklistView: View {
                 .font(.body)
                 .foregroundStyle(AFCTokens.Color.secondaryText)
 
-            AuditResultControl(selected: item.result) { result in
+            AuditResultControl(criterionID: criterion.id, selected: item.result) { result in
                 updateResult(item, result: result)
             }
 
-            DisclosureGroup(
-                String(localized: "audit.checklist.note"),
-                isExpanded: noteExpanded(item)
-            ) {
-                VStack(alignment: .leading, spacing: AFCTokens.Spacing.small) {
-                    TextField(
-                        String(localized: "audit.checklist.note.placeholder"),
-                        text: noteDraft(item),
-                        axis: .vertical
-                    )
-                    .font(.body)
-                    .lineLimit(3...8)
-                    .textFieldStyle(.roundedBorder)
+            Button {
+                toggleNote(item)
+            } label: {
+                Label(
+                    String(localized: "audit.checklist.note"),
+                    systemImage: expandedNoteIDs.contains(item.identifier) ? "chevron.down" : "chevron.right"
+                )
+                .font(.body)
+                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier(AFCAccessibilityID.criterionNote(criterion.id))
+            .accessibilityAddTraits(expandedNoteIDs.contains(item.identifier) ? .isSelected : [])
 
-                    AFCPrimaryButton(title: String(localized: "audit.checklist.note.save")) {
+            if expandedNoteIDs.contains(item.identifier) {
+                VStack(alignment: .leading, spacing: AFCTokens.Spacing.small) {
+                    TextEditor(text: noteDraft(item))
+                        .font(.body)
+                        .frame(minHeight: 88)
+                        .accessibilityLabel(String(localized: "audit.checklist.note"))
+                        .accessibilityIdentifier(AFCAccessibilityID.criterionNoteField(criterion.id))
+
+                    AFCPrimaryButton(
+                        title: String(localized: "audit.checklist.note.save"),
+                        accessibilityIdentifier: AFCAccessibilityID.criterionNoteSave(criterion.id)
+                    ) {
                         saveNote(item)
                     }
 
@@ -138,11 +150,9 @@ struct AuditChecklistView: View {
                         .frame(minHeight: 44)
                     }
                 }
-                .padding(.top, AFCTokens.Spacing.xSmall)
             }
         }
         .padding(.vertical, AFCTokens.Spacing.xSmall)
-        .accessibilityElement(children: .contain)
     }
 
     private func attemptFinish(_ audit: Audit, progress: AuditReviewProgress) {
@@ -181,20 +191,16 @@ struct AuditChecklistView: View {
         expandedNoteIDs.remove(item.identifier)
     }
 
-    private func noteExpanded(_ item: AuditItem) -> Binding<Bool> {
-        Binding(
-            get: { expandedNoteIDs.contains(item.identifier) },
-            set: { expanded in
-                if expanded {
-                    expandedNoteIDs.insert(item.identifier)
-                    if noteDrafts[item.identifier] == nil {
-                        noteDrafts[item.identifier] = item.note ?? ""
-                    }
-                } else {
-                    saveNote(item)
-                }
-            }
-        )
+    private func toggleNote(_ item: AuditItem) {
+        if expandedNoteIDs.contains(item.identifier) {
+            saveNote(item)
+            return
+        }
+
+        expandedNoteIDs.insert(item.identifier)
+        if noteDrafts[item.identifier] == nil {
+            noteDrafts[item.identifier] = item.note ?? ""
+        }
     }
 
     private func noteDraft(_ item: AuditItem) -> Binding<String> {
@@ -257,17 +263,25 @@ private struct CriterionRow {
 }
 
 private struct AuditResultControl: View {
+    let criterionID: String
     let selected: AuditResult
     let onSelect: (AuditResult) -> Void
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     private let columns = [
         GridItem(.adaptive(minimum: 140), spacing: AFCTokens.Spacing.small)
     ]
 
     var body: some View {
-        LazyVGrid(columns: columns, alignment: .leading, spacing: AFCTokens.Spacing.small) {
-            ForEach(AFCStatus.allCases, id: \.self) { status in
-                resultButton(status)
+        Group {
+            if dynamicTypeSize.isAccessibilitySize {
+                VStack(alignment: .leading, spacing: AFCTokens.Spacing.small) {
+                    ForEach(AFCStatus.allCases, id: \.self, content: resultButton)
+                }
+            } else {
+                LazyVGrid(columns: columns, alignment: .leading, spacing: AFCTokens.Spacing.small) {
+                    ForEach(AFCStatus.allCases, id: \.self, content: resultButton)
+                }
             }
         }
         .accessibilityElement(children: .contain)
@@ -286,6 +300,7 @@ private struct AuditResultControl: View {
                 .padding(.horizontal, AFCTokens.Spacing.small)
                 .padding(.vertical, AFCTokens.Spacing.small)
                 .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                .fixedSize(horizontal: false, vertical: true)
                 .background(
                     status.color.opacity(isSelected ? 0.22 : 0.08),
                     in: RoundedRectangle(cornerRadius: AFCTokens.Radius.small, style: .continuous)
@@ -296,7 +311,8 @@ private struct AuditResultControl: View {
                 )
         }
         .buttonStyle(.plain)
-        .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
+        .accessibilityIdentifier(AFCAccessibilityID.criterionResult(criterionID, status.result))
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }
 

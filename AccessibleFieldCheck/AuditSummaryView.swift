@@ -48,6 +48,7 @@ struct AuditSummaryView: View {
                 Text(audit.title)
                     .font(.title2)
                     .foregroundStyle(AFCTokens.Color.primaryText)
+                    .accessibilityAddTraits(.isHeader)
                 Text(statusText(audit.status))
                     .font(.body)
                     .foregroundStyle(AFCTokens.Color.secondaryText)
@@ -61,7 +62,7 @@ struct AuditSummaryView: View {
                 countRow("audit.summary.count.notReviewed", value: progress.notReviewed)
             }
 
-            Section(String(localized: "audit.summary.needsAttention.section")) {
+            Section {
                 if needsAttention.isEmpty {
                     Text(String(localized: "audit.summary.needsAttention.empty"))
                         .font(.body)
@@ -81,22 +82,28 @@ struct AuditSummaryView: View {
                         }
                         .padding(.vertical, AFCTokens.Spacing.xSmall)
                         .accessibilityElement(children: .combine)
+                        .accessibilityIdentifier(
+                            AFCAccessibilityID.summaryNeedsAttentionItem(row.criterion.id)
+                        )
                     }
                 }
+            } header: {
+                Text(String(localized: "audit.summary.needsAttention.section"))
+                    .accessibilityIdentifier(AFCAccessibilityID.summaryNeedsAttentionSection)
             }
         }
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
-        .safeAreaInset(edge: .bottom) {
+        .toolbar {
             if audit.status == .completed {
-                AFCPrimaryButton(
-                    title: String(localized: "audit.summary.reopen"),
-                    accessibilityIdentifier: AFCAccessibilityID.summaryReopenButton
-                ) {
-                    reopen(audit)
+                ToolbarItem(placement: .bottomBar) {
+                    AFCPrimaryButton(
+                        title: String(localized: "audit.summary.reopen"),
+                        accessibilityIdentifier: AFCAccessibilityID.summaryReopenButton
+                    ) {
+                        reopen(audit)
+                    }
                 }
-                .padding(AFCTokens.Spacing.medium)
-                .background(AFCTokens.Color.background)
             }
         }
     }
