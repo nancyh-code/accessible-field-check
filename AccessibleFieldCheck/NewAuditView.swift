@@ -21,6 +21,7 @@ struct NewAuditView: View {
                 Text(String(localized: "audit.new.titleField.label"))
                     .font(.headline)
                     .foregroundStyle(AFCTokens.Color.primaryText)
+                    .accessibilityHidden(true)
 
                 TextField(
                     String(localized: "audit.new.titleField.placeholder"),

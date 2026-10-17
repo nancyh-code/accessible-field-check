@@ -60,6 +60,7 @@ struct AuditsView: View {
                     AuditListRow(audit: audit)
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier(AFCAccessibilityID.auditsRow)
                 .listRowInsets(
                     EdgeInsets(
                         top: AFCTokens.Spacing.small,
