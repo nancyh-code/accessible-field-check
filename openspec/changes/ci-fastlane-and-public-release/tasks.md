@@ -1,9 +1,9 @@
 ## 1. GitHub Actions and Fastlane
 
-- [ ] 1.1 Commit a shared `AccessibleFieldCheck` scheme that builds the app and runs `AccessibleFieldCheckTests` and `AccessibleFieldCheckUITests`, and verify the scheme file is under `xcshareddata` and `xcodebuild -list` shows it.
-- [ ] 1.2 Add `Gemfile`, `Gemfile.lock`, and `fastlane/Fastfile` with lanes `test`, `build`, and `ci` only, and verify `bundle exec fastlane lanes` lists those three and no upload, match, or snapshot lane.
-- [ ] 1.3 Add `.github/workflows/ci.yml` as the only workflow, triggered on push to `main` and on `pull_request`, using `xcode-27`, selecting Xcode 27.0, and running `bundle exec fastlane ci` with no secrets, and verify no second workflow or version matrix exists.
-- [ ] 1.4 Run `bundle exec fastlane ci` on local Xcode 27.0 for the iPhone 17 / iOS 27.0 simulator, and verify the signing-free build, existing unit tests, and existing UI tests pass.
+- [x] 1.1 Commit a shared `AccessibleFieldCheck` scheme that builds the app and runs `AccessibleFieldCheckTests` and `AccessibleFieldCheckUITests`, and verify the scheme file is under `xcshareddata` and `xcodebuild -list` shows it.
+- [x] 1.2 Add `Gemfile`, `Gemfile.lock`, and `fastlane/Fastfile` with lanes `test`, `build`, and `ci` only, and verify `bundle exec fastlane lanes` lists those three and no upload, match, or snapshot lane.
+- [x] 1.3 Add `.github/workflows/ci.yml` as the only workflow, triggered on push to `main` and on `pull_request`, using `xcode-27`, selecting Xcode 27.0, and running `bundle exec fastlane ci` with no secrets, and verify no second workflow or version matrix exists.
+- [x] 1.4 Run `bundle exec fastlane ci` on local Xcode 27.0 for the iPhone 17 / iOS 27.0 simulator, and verify the signing-free build, existing unit tests, and existing UI tests pass.
 
 ## 2. README, repository hardening, and demo
 

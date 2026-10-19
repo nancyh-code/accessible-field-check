@@ -1,0 +1,60 @@
+skip_docs
+
+default_platform(:ios)
+
+# `sh` runs in the fastlane directory. `run_tests` resolves the project
+# from the repository root. Both stay relative so no machine path is embedded.
+shell_project_path = File.join("..", "AccessibleFieldCheck.xcodeproj")
+test_project_path = "AccessibleFieldCheck.xcodeproj"
+scheme_name = "AccessibleFieldCheck"
+test_destination = ENV.fetch(
+  "TEST_DESTINATION",
+  "platform=iOS Simulator,name=iPhone 16,OS=18.2"
+)
+generic_simulator_destination = "generic/platform=iOS Simulator"
+
+platform :ios do
+  desc "Run existing unit tests, then existing UI tests sequentially"
+  lane :test do
+    run_tests(
+      project: test_project_path,
+      scheme: scheme_name,
+      destination: test_destination,
+      only_testing: ["AccessibleFieldCheckTests"],
+      code_coverage: false,
+      skip_detect_devices: true,
+      result_bundle: false
+    )
+    run_tests(
+      project: test_project_path,
+      scheme: scheme_name,
+      destination: test_destination,
+      only_testing: ["AccessibleFieldCheckUITests"],
+      code_coverage: false,
+      parallel_testing: false,
+      disable_concurrent_testing: true,
+      skip_detect_devices: true,
+      number_of_retries: 0,
+      result_bundle: false
+    )
+  end
+
+  desc "Build for the generic iOS Simulator without code signing"
+  lane :build do
+    sh(
+      "xcodebuild",
+      "-project", shell_project_path,
+      "-scheme", scheme_name,
+      "-destination", generic_simulator_destination,
+      "-configuration", "Debug",
+      "CODE_SIGNING_ALLOWED=NO",
+      "build"
+    )
+  end
+
+  desc "Signing-free simulator build, then unit and UI tests"
+  lane :ci do
+    build
+    test
+  end
+end

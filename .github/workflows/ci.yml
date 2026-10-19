@@ -1,0 +1,44 @@
+name: CI
+
+# xcode-27 is a GitHub-hosted public-preview runner image.
+# This workflow selects Xcode 27.0 build 27A266a and does not fall back
+# to another runner or Xcode version.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    runs-on: xcode-27
+    env:
+      BUNDLE_PATH: vendor/bundle
+      FASTLANE_SKIP_UPDATE_CHECK: "1"
+      FASTLANE_HIDE_CHANGELOG: "1"
+      FASTLANE_OPT_OUT_USAGE: "1"
+      TEST_DESTINATION: "platform=iOS Simulator,name=iPhone 17,OS=27.0"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode 27.0
+        run: |
+          set -euo pipefail
+          sudo xcode-select -s /Applications/Xcode_27.0.app
+          xcodebuild -version
+          version="$(xcodebuild -version)"
+          printf '%s\n' "$version" | grep -F "Xcode 27.0"
+          printf '%s\n' "$version" | grep -F "27A266a"
+
+      - name: Install gems
+        run: |
+          gem install bundler -v 4.0.20 --no-document
+          bundle _4.0.20_ install
+
+      - name: Run Fastlane ci
+        run: bundle _4.0.20_ exec fastlane ci
