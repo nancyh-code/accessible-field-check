@@ -17,4 +17,4 @@
 
 - [x] 3.1 Review the diff and verify it contains no new product screens, product tests, scoring, export, networking, or signing automation.
 - [x] 3.2 Run `openspec validate ci-fastlane-and-public-release --strict --type change` and verify the change is valid.
-- [x] 3.3 Record the release checklist, mark the hosted Actions run not-yet-observed when no remote exists, and verify `git tag -l v1.0.0` is empty.
+- [x] 3.3 Record the release checklist. Hosted GitHub Actions succeeded on a rerun after the first run failed during simulator/UI-test bootstrap with no app assertion failure. The successful run took about 10 minutes on `xcode-27`, Xcode 27.0 build 27A266a, and iPhone 17 / iOS 27.0, via `bundle exec fastlane ci`. `git tag -l v1.0.0` is empty.

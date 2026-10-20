@@ -135,7 +135,7 @@ Hosted CI sets:
 
 `platform=iOS Simulator,name=iPhone 17,OS=27.0`
 
-Hosted GitHub Actions has not been observed. This repository has no git remote, so a green Actions run is not claimed here.
+Hosted GitHub Actions has been observed. The workflow uses `xcode-27`, selects Xcode 27.0 build 27A266a, tests on iPhone 17 / iOS 27.0, and runs `bundle exec fastlane ci`. The first hosted run failed during simulator and UI-test bootstrap. No app assertion failed. Rerunning the same workflow, with no code changes, succeeded in about 10 minutes.
 
 ## CI/CD
 
@@ -176,9 +176,9 @@ Local and hosted toolchains differ.
 - Unit tests: passed locally. 15 tests, 0 failures.
 - UI tests: passed locally. 2 tests, 0 failures, on iPhone 16 / iOS 18.2. The `test` lane passed twice, then again inside `ci`.
 - Fastlane `test`, `build`, and `ci`: passed locally on iPhone 16 / iOS 18.2.
-- GitHub Actions: not yet observed. There is no git remote, so the hosted check has not run.
+- GitHub Actions: observed. The first hosted run failed during simulator and UI-test bootstrap, and no app assertion failed. A rerun of the same workflow, with no code changes, succeeded in about 10 minutes on `xcode-27`, Xcode 27.0 build 27A266a, iPhone 17 / iOS 27.0, through `bundle exec fastlane ci`.
 - OpenSpec change valid: `openspec validate ci-fastlane-and-public-release --strict` passed.
-- Clean git status: not clean. The UI-test reliability fix is uncommitted. Required before tagging.
+- Clean git status: `main` matched `origin/main` before this record update. The update itself is uncommitted. Required before tagging.
 - README complete and demo images present: this document is in place, and the Demo section links the four `docs/demo/` PNGs.
 - No secrets in the tree: none found in tracked text. Review again before tagging.
 
