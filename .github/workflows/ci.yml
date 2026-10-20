@@ -24,7 +24,7 @@ jobs:
       TEST_DESTINATION: "platform=iOS Simulator,name=iPhone 17,OS=27.0"
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Select Xcode 27.0
         run: |
