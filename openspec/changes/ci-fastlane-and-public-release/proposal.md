@@ -5,7 +5,7 @@ Accessible Field Check already has a working V1 review flow, but a public portfo
 ## What Changes
 
 - Add one GitHub Actions workflow that builds the app for the iOS Simulator and runs the existing tests on push to `main` and on pull requests, with no code signing, secrets, or store upload.
-- Pin that workflow to the Xcode 27.0 toolchain on the `xcode-27` hosted runner, matching the local Xcode 27.0 (27A266a) project.
+- Pin that workflow to the hosted CI contract: `xcode-27`, Xcode 27.0 build 27A266a, and iPhone 17 / iOS 27.0. Local development is Xcode 27.1 build 27A9275 with Swift 6.4. The project Swift language mode stays Swift 5 (`SWIFT_VERSION = 5.0`). The deployment target stays iOS 18.0. Documentation states those three toolchain facts separately and does not describe local Xcode as 27.0.
 - Add a minimal Fastlane setup with `test`, `build`, and `ci` lanes. The workflow calls `ci`.
 - Add a public README, an MIT license, a 3–4 image manual demo set, and a small `.gitignore` pass so the repo is safe to publish.
 - Document the real architecture in the README and state the V1 boundaries: this is not a legal compliance tool, it does not certify WCAG conformance, and results are structured review observations only.

@@ -24,15 +24,15 @@ The repository SHALL provide one automated check that runs on every push to main
 - **THEN** it finishes without repository secrets, a distribution certificate, or an App Store or TestFlight upload
 
 ### Requirement: The toolchain is explicit
-The check SHALL select Xcode 27.0. Project documentation SHALL state that local development uses Xcode 27.0 and that the deployment target is iOS 18.0. The check SHALL NOT add a job for any older Xcode version.
+The check SHALL select Xcode 27.0. The hosted CI contract is the `xcode-27` runner, Xcode 27.0 build 27A266a, and the iPhone 17 / iOS 27.0 simulator. The current local developer toolchain is Xcode 27.1 build 27A9275 with Swift 6.4. The project Swift language mode is Swift 5 (`SWIFT_VERSION = 5.0`). The deployment target is iOS 18.0. Project documentation SHALL state those three toolchain facts separately, SHALL state the deployment target, and SHALL NOT claim that local development uses Xcode 27.0. The check SHALL NOT add a job for any older Xcode version.
 
 #### Scenario: CI uses Xcode 27.0
 - **WHEN** the check runs
 - **THEN** it uses Xcode 27.0
 
-#### Scenario: Docs state the local toolchain
+#### Scenario: Docs distinguish local, hosted, and language mode
 - **WHEN** a reader opens the project documentation
-- **THEN** it names Xcode 27.0 and deployment target iOS 18.0
+- **THEN** it names local Xcode 27.1 build 27A9275 with Swift 6.4, the hosted `xcode-27` contract of Xcode 27.0 build 27A266a and iPhone 17 / iOS 27.0, deployment target iOS 18.0, and Swift language mode `SWIFT_VERSION = 5.0`, and it does not claim that local development uses Xcode 27.0
 
 ### Requirement: Fastlane validates without distributing
 The repository SHALL provide three lanes named test, build, and ci. The test lane SHALL run the existing unit tests and the existing UI tests. The build lane SHALL build the app for validation without distribution signing. The ci lane SHALL be what the continuous-integration check runs, and it SHALL compose that validation. None of the lanes SHALL upload a build, manage certificates, or run match.

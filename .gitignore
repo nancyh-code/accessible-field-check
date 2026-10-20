@@ -7,6 +7,7 @@ xcuserdata/
 # Build products
 DerivedData/
 build/
+*.xcresult
 *.moved-aside
 *.hmap
 *.ipa
@@ -33,7 +34,7 @@ AuthKey_*.p8
 *.swp
 *~
 
-# Fastlane local output (not used in this change)
+# Fastlane local output
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/test_output/

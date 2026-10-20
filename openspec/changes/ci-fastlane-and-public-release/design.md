@@ -2,9 +2,9 @@
 
 See `proposal.md` for motivation. Product behavior stays the V1 already in the tree.
 
-The app is a single Xcode project (`objectVersion` 110, `LastUpgradeCheck` 2700) with targets `AccessibleFieldCheck`, `AccessibleFieldCheckTests`, and `AccessibleFieldCheckUITests`. Local toolchain is Xcode 27.0 (27A266a). Deployment target is iOS 18.0. Marketing version is already 1.0. `xcodebuild -list` shows scheme `AccessibleFieldCheck`, but the scheme file is not in `xcshareddata`; user scheme state lives under ignored `xcuserdata`. There is no git remote, README, license, Fastlane, or GitHub Actions workflow.
+The app is a single Xcode project (`objectVersion` 110, `LastUpgradeCheck` 2700) with targets `AccessibleFieldCheck`, `AccessibleFieldCheckTests`, and `AccessibleFieldCheckUITests`. The current local developer toolchain is Xcode 27.1 build 27A9275 with Swift 6.4. The hosted CI contract is the `xcode-27` runner with Xcode 27.0 build 27A266a and tests on iPhone 17 / iOS 27.0. Those are different toolchains. Deployment target is iOS 18.0. The project Swift language mode is Swift 5 (`SWIFT_VERSION = 5.0`). Marketing version is already 1.0. `xcodebuild -list` shows scheme `AccessibleFieldCheck`, but the scheme file is not in `xcshareddata`; user scheme state lives under ignored `xcuserdata`. There is no git remote, README, license, Fastlane, or GitHub Actions workflow.
 
-GitHub’s `xcode-27` runner image is generally available and defaults to Xcode 27.0 build 27A266a, the same build used locally. This machine has an iPhone 17 simulator on iOS 27.0.
+GitHub’s `xcode-27` runner image is generally available and the check selects Xcode 27.0 build 27A266a. That build is the hosted contract, not the local toolchain.
 
 Existing tests to reuse, not extend:
 
@@ -34,11 +34,11 @@ Existing tests to reuse, not extend:
 
 Add `.github/workflows/ci.yml` only. Triggers: `push` to `main`, and `pull_request`. `runs-on: xcode-27` (standard size, not `xcode-27-xlarge`).
 
-Steps: checkout, select Xcode 27.0 explicitly (`/Applications/Xcode_27.0.app`), `bundle install`, `bundle exec fastlane ci`. No third-party setup action. The image default is already 27.0; the explicit select keeps a later 27.1 default on that image from changing the toolchain.
+Steps: checkout, select Xcode 27.0 build 27A266a explicitly (`/Applications/Xcode_27.0.app`), `bundle install`, `bundle exec fastlane ci`. No third-party setup action. That selection is the hosted contract (`xcode-27`, Xcode 27.0 build 27A266a, iPhone 17 / iOS 27.0). The explicit select keeps a later default on that image from changing the hosted toolchain. Local development is separate: Xcode 27.1 build 27A9275 and Swift 6.4. Documentation names both, plus the project Swift language mode `SWIFT_VERSION = 5.0` and deployment target iOS 18.0. It does not describe local Xcode as 27.0.
 
 **Alternative:** call `xcodebuild` directly in the workflow and skip Fastlane on CI. Rejected because the workflow and laptops would drift.
 
-**Alternative:** several workflows or a version matrix. Rejected; the project has one supported toolchain.
+**Alternative:** several workflows or a version matrix. Rejected; the hosted check has one toolchain, Xcode 27.0 build 27A266a. Local Xcode 27.1 is documented separately and is not a second CI job.
 
 ### UI tests stay in the required check
 
@@ -98,7 +98,7 @@ Capture them by hand in the Simulator from sample content, for example title `Li
 
 ### Release tag stays manual
 
-Marketing version stays 1.0. Implementation does not run `git tag`. The README CI/CD section includes the checklist: build green, unit tests green, UI tests green locally, GitHub Actions green, Fastlane lanes green, OpenSpec valid, clean git status, README complete, no secrets, demo ready. There is no remote today, so a hosted Actions run cannot be observed until the branch is pushed. Local verification is `bundle exec fastlane ci` on Xcode 27.0. If no hosted run exists yet, the checklist item stays open and the tag is still not created.
+Marketing version stays 1.0. Implementation does not run `git tag`. The README CI/CD section includes the checklist: build green, unit tests green, UI tests green locally, GitHub Actions green, Fastlane lanes green, OpenSpec valid, clean git status, README complete, no secrets, demo ready. There is no remote today, so a hosted Actions run cannot be observed until the branch is pushed. Local verification is `bundle exec fastlane ci` on the current local toolchain, Xcode 27.1 build 27A9275. Hosted CI remains Xcode 27.0 build 27A266a on `xcode-27`. If no hosted run exists yet, the checklist item stays open and the tag is still not created.
 
 ### Expected commits during apply
 
