@@ -172,15 +172,15 @@ Local and hosted toolchains differ.
 
 `v1.0.0` is a manual tag. This repository does not create it. Leave the version untagged while any item below is failed or not yet observed.
 
-- Signing-free simulator build: passed locally through the `build` lane.
-- Unit tests: passed locally.
-- UI tests: passed locally.
+- Signing-free simulator build: passed locally through the `build` lane, including inside `ci`, on Xcode 27.1 build 27A9275.
+- Unit tests: passed locally. 15 tests, 0 failures.
+- UI tests: passed locally. 2 tests, 0 failures, on iPhone 16 / iOS 18.2. The `test` lane passed twice, then again inside `ci`.
 - Fastlane `test`, `build`, and `ci`: passed locally on iPhone 16 / iOS 18.2.
-- GitHub Actions: not yet observed. There is no remote, so the hosted check has not run.
-- OpenSpec change valid: required before tagging.
-- Clean git status: required before tagging.
+- GitHub Actions: not yet observed. There is no git remote, so the hosted check has not run.
+- OpenSpec change valid: `openspec validate ci-fastlane-and-public-release --strict` passed.
+- Clean git status: not clean. The UI-test reliability fix is uncommitted. Required before tagging.
 - README complete and demo images present: this document is in place, and the Demo section links the four `docs/demo/` PNGs.
-- No secrets in the tree: required before tagging.
+- No secrets in the tree: none found in tracked text. Review again before tagging.
 
 ## Localization
 

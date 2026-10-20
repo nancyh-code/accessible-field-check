@@ -141,20 +141,47 @@ final class AuditFlowUITests: XCTestCase {
     }
 
     private func addNote(in app: XCUIApplication, criterionID: String, note: String) {
-        app.swipeUp()
-        let noteButton = element(in: app, identifier: "criterion.\(criterionID).note")
-        XCTAssertTrue(noteButton.waitForExistence(timeout: 8), "Note control should exist on the criterion.")
+        let noteButton = app.buttons["criterion.\(criterionID).note"]
+        revealForTap(noteButton, in: app)
         noteButton.tap()
 
         let field = element(in: app, identifier: "criterion.\(criterionID).note.field")
         XCTAssertTrue(field.waitForExistence(timeout: 6), "Note field should expand inline.")
+        revealForTap(field, in: app)
+        XCTAssertTrue(field.isHittable, "Note field should expand inline.")
         field.tap()
         field.typeText(note)
         app.navigationBars.firstMatch.tap()
 
         let save = app.buttons["criterion.\(criterionID).note.save"]
-        XCTAssertTrue(save.waitForExistence(timeout: 4))
+        revealForTap(save, in: app)
         save.tap()
+    }
+
+    private func revealForTap(_ element: XCUIElement, in app: XCUIApplication) {
+        XCTAssertTrue(element.waitForExistence(timeout: 8), "Expected \(element.identifier) to exist.")
+        let window = app.windows.firstMatch
+        for _ in 0..<5 {
+            if isReadyToTap(element, in: window) {
+                return
+            }
+            if element.frame.midY < window.frame.midY {
+                app.swipeDown()
+            } else {
+                app.swipeUp()
+            }
+        }
+        XCTAssertTrue(isReadyToTap(element, in: window), "Expected \(element.identifier) to be on screen.")
+    }
+
+    private func isReadyToTap(_ element: XCUIElement, in window: XCUIElement) -> Bool {
+        guard element.exists, element.isHittable else {
+            return false
+        }
+        var visible = window.frame
+        visible.origin.y += 64
+        visible.size.height = max(0, visible.height - 64 - 88)
+        return visible.contains(CGPoint(x: element.frame.midX, y: element.frame.midY))
     }
 
     private func confirmFinishIfNeeded(in app: XCUIApplication) {
